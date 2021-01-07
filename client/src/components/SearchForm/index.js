@@ -11,10 +11,10 @@ const SearchForm = props => {
                     value={props.search}
                     type="text"
                     name="searchBook"
-                    placeholder="Search for a book by Title"
+                    placeholder="Enter Book's Name"
                     onChange={props.handleInputChange} />
             </div>
-            <button type="submit" className="submitBtn btn" onClick={props.handleFormSubmit}>
+            <button type="submit" className="submitBtn btn btn-light" onClick={props.handleFormSubmit}>
                 Submit</button>
         </form>
     )

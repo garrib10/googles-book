@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
 import { Container, Row, Col } from "../components/Grid";
 import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult"
@@ -41,7 +42,7 @@ class SearchBooks extends Component {
             }
             return result;
           })
-          this.setState({ books: results, search: ""})
+          this.setState({ books: results, search: "" })
         }
       })
       .catch(err => this.setState({ error: err.items }));
@@ -49,15 +50,21 @@ class SearchBooks extends Component {
 
 
   handleSavedButton = event => {
+     console.log(event);
     event.preventDefault();
+    console.log(this.state.books)
     let savedBooks = this.state.books.filter(book => book.id === event.target.id)
+    savedBooks = savedBooks[0];
     API.saveBook(savedBooks)
-      .then(console.log(savedBooks))
-      .catch(err => console.log(err));
-  };
+      .then(this.setState({ message: alert("Your book is saved") }))
+      .catch(err => console.log(err))
+  }
   render() {
     return (
       <Container fluid>
+        <Jumbotron>
+          <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
+        </Jumbotron>
         <Container>
           <Row>
             <Col size="12">
@@ -68,11 +75,15 @@ class SearchBooks extends Component {
             </Col>
           </Row>
         </Container>
+        <br></br>
         <Container>
           <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
         </Container>
       </Container>
     )
   }
+
+
 }
-export default SearchBooks;
+
+export default SearchBooks

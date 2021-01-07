@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
+import { Container } from "../components/Grid";
 import SavedResult from "../components/SavedResult"
 
 class SaveBook extends Component {
@@ -7,12 +9,14 @@ class SaveBook extends Component {
     savedBooks: []
   };
 
+  //when this component mounts, grab all books that were save to the database 
   componentDidMount() {
     API.getBooks()
       .then(res => this.setState({ savedBooks: res.data }))
       .catch(err => console.log(err))
   }
 
+  //function to remove book by id
   handleDeleteButton = id => {
     API.deleteBook(id)
       .then(res => this.componentDidMount())
@@ -21,9 +25,18 @@ class SaveBook extends Component {
 
   render() {
     return (
-      <SavedResult savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+      <Container fluid className="container">
+        <Jumbotron>
+          <h1 className="text-white">Your Favorite Books</h1>
+        </Jumbotron>
+        <Container>
+          <SavedResult savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+        </Container>
+      </Container>
     )
   }
 }
 
-export default SaveBook 
+
+
+export default SaveBook;
