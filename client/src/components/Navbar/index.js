@@ -20,4 +20,4 @@ function NavBar() {
         </nav>
     );
 }
-export default NavBar;
+ export default NavBar;
