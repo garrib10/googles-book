@@ -5,7 +5,7 @@ import "./style.css";
 const SearchResult = props => {
     return (
         <Container>
-            <h3>Search Results</h3>
+            
             {props.books.map(book => {
                 return (
                     <div className="card mb-5">
