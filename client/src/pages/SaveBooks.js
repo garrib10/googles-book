@@ -9,34 +9,19 @@ class SaveBooks extends Component {
     savedBooks: []
   };
 
-
-  componentDidMount = () => {
-    this.getBooks()
-}
-
-deleteGoogleBook = currentBook => {
-    API.deleteBook( currentBook.id )
-    .then(res => {
-        console.log("You deleted this book:", res);
-        this.getBooks();
-    })
-    .catch(err => {
-        console.log("This is the error", err);
-    })
-}
-
-getBooks = () => {
+  //when this component mounts, grab all books that were save to the database 
+  componentDidMount() {
     API.getBooks()
-    .then(res => {
-        this.setState({
-            savedBooks: res.data
-        })
-        console.log("This is the res from getBooks", res);
-    })
-    .catch(err => {
-        console.log("This is the error", err);
-    })
-}
+      .then(res => this.setState({ savedBooks: res.data }))
+      .catch(err => console.log(err))
+  }
+
+  //function to remove book by id
+  handleDeleteButton = id => {
+    API.deleteBook(id)
+      .then(res => this.componentDidMount())
+      .catch(err => console.log(err))
+  }
 
   render() {
     return (

@@ -16,8 +16,7 @@ class SearchBooks extends Component {
   handleInputChange = event => {
     this.setState({ search: event.target.value })
   }
-
-  //function to control the submit button of the search form 
+ 
   handleFormSubmit = event => {
     event.preventDefault();
     API.getGoogleSearchBooks(this.state.search)
@@ -26,11 +25,11 @@ class SearchBooks extends Component {
           throw new Error(res.data.items);
         }
         else {
-          // store response
+         
           let results = res.data.items
-          //map through the array 
+        
           results = results.map(result => {
-            //store each book information in a new object 
+           
             result = {
               key: result.id,
               id: result.id,
@@ -53,6 +52,8 @@ class SearchBooks extends Component {
      console.log(event);
     event.preventDefault();
     console.log(this.state.books)
+
+    // Changing  savedBooks might be able to change context on SaveBooks.js//
     let savedBooks = this.state.books.filter(book => book.id === event.target.id)
     savedBooks = savedBooks[0];
     API.saveBook(savedBooks)
