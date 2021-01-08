@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function NavBar() {
+function Nav() {
     return (
         <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="/">
@@ -20,4 +20,4 @@ function NavBar() {
         </nav>
     );
 }
- export default NavBar;
+ export default Nav;

@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 export default {
     // Get book from google search 
@@ -16,8 +16,8 @@ export default {
         return axios.get("/api/books/" + id);
     },
 
-    saveBook: function (savedBooks) {
-        return axios.post("/api/books", savedBooks);
+    saveBook: function (bookData) {
+        return axios.post("/api/books", bookData);
     },
 
     deleteBook: function (id) {
