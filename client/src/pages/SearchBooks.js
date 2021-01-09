@@ -10,6 +10,7 @@ class SearchBooks extends Component {
   state = {
     search: "",
     books: [],
+    error: "",
     
   };
 
@@ -51,9 +52,7 @@ class SearchBooks extends Component {
   handleSavedButton = event => {
      console.log(event);
     event.preventDefault();
-    console.log(this.state.books)
-
-    // Changing  savedBooks might be able to change context on SaveBooks.js//
+    console.log(this.state.books);
     let savedBooks = this.state.books.filter(book => book.id === event.target.id)
     savedBooks = savedBooks[0];
     API.saveBook(savedBooks)
