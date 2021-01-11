@@ -1,10 +1,7 @@
 ## Google Books Search
 
 ## Overview
-In this activity, you'll create a new React-based Google Books Search app. This assignment requires you to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. You'll also use Node, Express and MongoDB so that users can save books to review or purchase later.
-
-
-
+In this activity, we were told to make a MERN stack application that uses the google api to be able to search for books. You should be able to search books and then save the books and it should show up on your Save Books page. 
 
 ## Instructions
 
@@ -119,20 +116,19 @@ Add a README.md to your repository describing the project. Here are some resourc
 
 * Mastering Markdown
 
-
-
-
-## Add To Your Portfolio
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
-
 ##  Submission on BCS
 
-Github Link: 
+Github Link: https://github.com/garrib10/googles-book
 
-Deployed: Heroku Link:
+Deployed: Heroku Link: https://fierce-caverns-09775.herokuapp.com/
 
 ## Screenshots
 
+<img width="1440" alt="Screen Shot 2021-01-11 at 6 32 46 PM" src="https://user-images.githubusercontent.com/68867054/104250692-1d395680-543c-11eb-85ca-ce3cf223b508.png">
+
+<img width="1440" alt="Screen Shot 2021-01-11 at 6 33 00 PM" src="https://user-images.githubusercontent.com/68867054/104250740-3e01ac00-543c-11eb-955a-0fdf3124b7a6.png">
+
+<img width="1439" alt="Screen Shot 2021-01-11 at 6 33 15 PM" src="https://user-images.githubusercontent.com/68867054/104250764-4a860480-543c-11eb-9f30-3802d499bb80.png">
 
 
 
