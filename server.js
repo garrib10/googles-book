@@ -9,7 +9,15 @@ const app = express();
 
 app.use(logger("dev"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",{useNewUrlParser:true,useFindAndModify:false})
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/google-books',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
