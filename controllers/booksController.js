@@ -22,11 +22,6 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    update: function(req, res) {
-        db.Book.findOneAndUpdate({ id: req.params.id }, req.body)
-          .then(dbBook => res.json(dbBook))
-          .catch(err => res.status(422).json(err));
-      },
     remove: function (req, res) {
         db.Book
             .findById({ _id: req.params.id })
